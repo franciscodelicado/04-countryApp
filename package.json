@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:github": "rm -fr docs/; ng build --base-href './'; mkdir -p docs; cp -r dist/country-app/* docs/"
   },
   "private": true,
   "dependencies": {

@@ -1,0 +1,44 @@
+@if (!country){
+  <div class="alert alert-danger" role="alert">
+    No existe el país
+  </div>
+}@else{
+  <div>
+    <div class="row">
+      <div class="col-12">
+        <h2> País: <strong>{{country.name.common}}</strong></h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        <h3>Bandera</h3>
+        <img [src]="country.flags.png" [alt]="country.name.common" class="img-thumbnail">
+      </div>
+      <div class="col">
+        <h3>Information</h3>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>Population:</strong> {{country.population |number}}
+          </li>
+          <li class="list-group-item">
+            <strong>Country Code:</strong> {{country.cca3}}
+        </ul>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col">
+        <h3>Translation</h3>
+        <div class="d-flex flex-wrap">
+          @for(translation of object.values(country.translations); track $index){
+            <span class="badge bg-primary m-1">{{translation.common}} </span>
+          }
+        </div>
+
+
+      </div>
+    </div>
+
+
+  </div>
+}
