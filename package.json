@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build:github": "rm -fr docs/; ng build --base-href './'; mkdir -p docs; cp -r dist/country-app/* docs/"
+    "build:github": "rm -fr docs/; ng build --base-href './'; mkdir -p docs; mv dist/country-app/browser/* docs/"
   },
   "private": true,
   "dependencies": {
